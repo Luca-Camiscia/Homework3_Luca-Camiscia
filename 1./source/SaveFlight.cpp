@@ -2,6 +2,7 @@
 SaveFlightData::SaveFlightData(const Posicion& p, const Presion& q)
     : posicion(p), presion(q) {
 }
+
 void SaveFlightData::serializar(ofstream& out){
     this->posicion->serializar(out);
     this->presion->serializar(out);
