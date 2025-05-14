@@ -46,8 +46,8 @@ class Posicion: public MedicionBase{
 class SaveFlightData{
     public:
     //uso shared por que es agregacion
-    shared_ptr<Posicion> posicion;
-    shared_ptr<Presion> presion;
+    Posicion* posicion;
+    Presion* presion;
 
     SaveFlightData(const Posicion& p, const Presion& q);
     void serializar(ofstream& out);

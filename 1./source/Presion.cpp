@@ -1,4 +1,4 @@
-#include "Clases.hpp"
+#include "../Clases.hpp"
 
 
 Presion::Presion(float p, float q, float t)

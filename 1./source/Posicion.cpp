@@ -1,4 +1,4 @@
-#include "Clases.hpp"
+#include "../Clases.hpp"
 
 
 Posicion::Posicion(float lat, float lon,float alt, float t): MedicionBase(t), latitud(lat), longitud(lon), altitud(alt){
