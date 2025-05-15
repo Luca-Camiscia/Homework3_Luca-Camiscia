@@ -17,6 +17,8 @@ class MedicionBase: public Imediciones{
     unique_ptr<float> tiempoMedicion;
     public:
     MedicionBase(float t);
+    void serializar(ofstream& out) override;
+    void deserializar(ifstream& in) override;
     float getTiempo() const;
     virtual void imprimir() = 0;
 };
