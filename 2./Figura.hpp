@@ -5,25 +5,19 @@
 #include <memory>
 #include <fstream>
 #include <tuple> //preguntar
+#include <concepts>
 using namespace std;
 
-
-class Figura{
-    public:
-    virtual float Area() =0;
-};
-
-class Posicion:public Figura{
+class Posicion{
     private:
     tuple<float,float> pos;
     public:
     Posicion(float x, float y);
     void Set(float x, float y);
     tuple<float,float>Get();
-    float Area() override;
 };
 
-class Circulo:public Figura{
+class Circulo{
     private:
     Posicion posicion;
     float radio;
@@ -31,6 +25,11 @@ class Circulo:public Figura{
     Circulo(Posicion pos, float radio);
     void Set(Posicion pos, float radio);
     tuple<Posicion,float> Get();
-    float Area() override;
+};
+
+class elipse{
+    private:
+    
+
 };
 

@@ -17,8 +17,8 @@ class MedicionBase: public Imediciones{
     unique_ptr<float> tiempoMedicion;
     public:
     MedicionBase(float t);
-    float getTiempo();
-    virtual void imprimir();
+    float getTiempo() const;
+    virtual void imprimir() = 0;
 };
 
 
@@ -45,9 +45,8 @@ class Posicion: public MedicionBase{
 };
 class SaveFlightData{
     public:
-    //uso shared por que es agregacion
-    Posicion* posicion;
-    Presion* presion;
+    Posicion posicion;
+    Presion presion;
 
     SaveFlightData(const Posicion& p, const Presion& q);
     void serializar(ofstream& out);

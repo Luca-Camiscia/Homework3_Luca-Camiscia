@@ -1,19 +1,21 @@
 #include "../Clases.hpp"
-SaveFlightData::SaveFlightData(const Posicion& p, const Presion& q)
-    : posicion(p), presion(q) {
+SaveFlightData::SaveFlightData(const Posicion& p, const Presion& q) :
+    posicion(p.latitud, p.longitud, p.altitud, p.getTiempo()),
+    presion(q.presionEstatica, q.presionDinamica, q.getTiempo())
+{
 }
 
 void SaveFlightData::serializar(ofstream& out){
-    this->posicion->serializar(out);
-    this->presion->serializar(out);
+    posicion.serializar(out);
+    presion.serializar(out);
 }
 
 void SaveFlightData::deserializar(ifstream& in){
-    this->posicion->deserializar(in);
-    this->presion->deserializar(in);   
+    posicion.deserializar(in);
+    presion.deserializar(in);   
 }   
 
 void SaveFlightData::imprimir(){
-    this->posicion->imprimir();
-    this->presion->imprimir();
+    posicion.imprimir();
+    presion.imprimir();
 }
