@@ -1,7 +1,7 @@
 #include "clases.hpp"
 
 int main(void){
-    Clase1 Datatest;
+    Clase1 Datatest = Clase1("vec_doubles","palabras","listas");
     Datatest.Add(1.3);
     Datatest.Add(2.1);
     Datatest.Add(string("Hola"));

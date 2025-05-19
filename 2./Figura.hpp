@@ -81,30 +81,41 @@ template<typename F>
 concept is_Rec = is_same_v<F,Rectangulo>;
 
 
-class ProcesadorFigura{
+// Declaración general
+template<typename F>
+class ProcesadorFigura {
 public:
-    template<is_Pos F>
-    static double Area(F f){
+    static double Area(F f) {
         return 0;
     }
-    // Especialización para Circulo
-    template<is_Cir F>
-    static double Area(F f) {
+};
+
+// Especialización para Circulo
+template<>
+class ProcesadorFigura<Circulo> {
+public:
+    static double Area(Circulo f) {
         auto [pos, radio] = f.Get();
         return pi * radio * radio;
     }
+};
 
-    // Especialización para Elipse
-    template<is_Eli F>
-    static double Area(F f) {
+// Especialización para Elipse
+template<>
+class ProcesadorFigura<Elipse> {
+public:
+    static double Area(Elipse f) {
         auto [pos, semiejes] = f.Get();
         auto [a, b] = semiejes;
         return pi * a * b;
     }
+};
 
-    // Especialización para Rectangulo
-    template<is_Rec F>
-    static double Area(F f) {
+// Especialización para Rectangulo
+template<>
+class ProcesadorFigura<Rectangulo> {
+public:
+    static double Area(Rectangulo f) {
         auto [pos, ancho, largo] = f.Get();
         return ancho * largo;
     }

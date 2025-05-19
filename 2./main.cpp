@@ -10,14 +10,14 @@ int main(void) {
 
     // Ejemplo con Circulo
     Circulo circulo(pos1, 2.0);
-    cout << "Area circulo = " << to_string(ProcesadorFigura::Area(circulo)) << endl;    
+    cout << "Area circulo = " << to_string(ProcesadorFigura<Circulo>::Area(circulo)) << endl;    
     // Ejemplo con Elipse
     Elipse elipse(pos2, make_tuple(3.0,1.5));
-    cout << "Area elipse = " << to_string(ProcesadorFigura::Area(elipse)) << endl;
+    cout << "Area elipse = " << to_string(ProcesadorFigura<Elipse>::Area(elipse)) << endl;
 
     // Ejemplo con Rectangulo
     Rectangulo rectangulo(pos3, 4.0, 6.0);
-    cout << "Area rectangulo = " << to_string(ProcesadorFigura::Area(rectangulo)) << endl;
+    cout << "Area rectangulo = " << to_string(ProcesadorFigura<Rectangulo>::Area(rectangulo)) << endl;
 
     return 0;
 }

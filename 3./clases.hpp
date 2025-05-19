@@ -14,8 +14,12 @@ private:
     vector<double> vec_doubles;
     vector<string> palabras;
     vector<vector<int>> mtx; 
+    string numId;
+    string strId;
+    string mtxId;
 
 public:
+    Clase1(string Idnum, string Idstr, string Idmtx);
     template <typename D>
     void Add(D d) {
         if constexpr (is_same_v<D, double>) {
