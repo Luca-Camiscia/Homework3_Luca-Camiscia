@@ -10,8 +10,7 @@ int main(void) {
 
     // Ejemplo con Circulo
     Circulo circulo(pos1, 2.0);
-    cout << "Area circulo = " << to_string(ProcesadorFigura::Area(circulo)) << endl;
-
+    cout << "Area circulo = " << to_string(ProcesadorFigura::Area(circulo)) << endl;    
     // Ejemplo con Elipse
     Elipse elipse(pos2, make_tuple(3.0,1.5));
     cout << "Area elipse = " << to_string(ProcesadorFigura::Area(elipse)) << endl;

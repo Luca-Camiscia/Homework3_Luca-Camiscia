@@ -17,7 +17,11 @@ class Posicion{
     public:
     Posicion(double x, double y);
     void Set(double x, double y);
+    void SetX(double x);
+    void SetY(double y);
     tuple<double,double>Get();
+    double GetX();
+    double GetY();
 };
 
 class Circulo{
@@ -27,7 +31,11 @@ class Circulo{
     public:
     Circulo(Posicion pos, double r);
     void Set(Posicion pos, double r);
+    void SetPos(Posicion pos);
+    void SetRad(double rad);
     tuple<Posicion,double> Get();
+    Posicion GetPos();
+    double GetRad();
 };
 
 class Elipse{
@@ -37,7 +45,13 @@ class Elipse{
     public:
     Elipse(Posicion pos, tuple<double,double> semis);
     void Set(Posicion pos, tuple<double,double> semis);
+    void SetPos(Posicion pos);
+    void SetSemi1(double semi);
+    void SetSemi2(double semi);
     tuple<Posicion, tuple<double,double>> Get();
+    Posicion GetPos();
+    double GetSemi1();
+    double GetSemi2();
 };
 
 class Rectangulo {
@@ -48,7 +62,13 @@ class Rectangulo {
     public:
     Rectangulo(Posicion V, double a, double l);
     void Set(Posicion V, double a, double l);
+    void SetPos(Posicion V);
+    void SetAncho(double a);
+    void SetLargo(double l);
     tuple<Posicion,double, double> Get();
+    Posicion GetPos();
+    double GetLar();
+    double GetAncho();
 };
 
 template<typename F>

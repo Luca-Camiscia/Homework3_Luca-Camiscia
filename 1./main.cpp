@@ -16,6 +16,7 @@ int main(void){
             Data1.serializar(outFile);
             outFile.close();
         }
+        
         // Aquí termina el scope de posicion, presion y Data1. Si no lo agrego tengo el tema de los dos frees
     }
 
@@ -36,7 +37,6 @@ int main(void){
     }
 
     Data2.imprimir();
-    cout << "Termine" << endl;
 
     return 0;
 }
