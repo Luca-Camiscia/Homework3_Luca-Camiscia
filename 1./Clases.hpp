@@ -28,6 +28,7 @@ class Presion:public MedicionBase{
     public:
     float presionEstatica;
     float presionDinamica;
+    Presion();
     Presion(float p, float q,float t);
     void serializar(ofstream& out) override;
     void deserializar(ifstream& in) override;
@@ -39,6 +40,7 @@ class Posicion: public MedicionBase{
     float latitud;
     float longitud;
     float altitud;
+    Posicion();
     Posicion(float lat, float lon, float alt, float t);
     void serializar(ofstream& out) override;
     void deserializar(ifstream& in) override;

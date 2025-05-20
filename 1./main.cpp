@@ -21,8 +21,8 @@ int main(void){
     }
 
     //Creo un Data2
-    Posicion pos2 = Posicion(0,0,0,0);
-    Presion pres2 = Presion(0,0,0);
+    Posicion pos2 = Posicion();
+    Presion pres2 = Presion();
     SaveFlightData Data2 = SaveFlightData(pos2,pres2);
 
     //Imprimo lo vacio

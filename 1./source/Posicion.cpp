@@ -1,5 +1,10 @@
 #include "../Clases.hpp"
 
+Posicion::Posicion():
+    MedicionBase(0), latitud(0), longitud(0),altitud(0){
+        
+    }
+
 
 Posicion::Posicion(float lat, float lon,float alt, float t): MedicionBase(t), latitud(lat), longitud(lon), altitud(alt){
 };
