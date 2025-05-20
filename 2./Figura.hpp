@@ -90,6 +90,15 @@ public:
     }
 };
 
+//Especializacion para Punto
+template<>
+class ProcesadorFigura<Posicion>{
+    public:
+        static double Area(Posicion f){
+            return 0;
+        }
+};
+
 // Especialización para Circulo
 template<>
 class ProcesadorFigura<Circulo> {
