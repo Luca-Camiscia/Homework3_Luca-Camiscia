@@ -40,7 +40,7 @@ public:
         else if constexpr (is_same_v<D, vector<int>>) {
             // Para vector<int>, Process devuelve subarrays: [1, 2, 3], [4, 5]
             for (size_t i = 0; i < datos.size(); ++i) {
-                res += "[";
+                res += "\n\t[";
                 for (size_t j = 0; j < datos[i].size(); ++j) {
                     res += to_string(datos[i][j]);
                     if (j + 1 < datos[i].size()) res += ", ";
@@ -83,6 +83,13 @@ public:
     }
 
     void JsonEnd(ostream& out) {
-        out << "}";
+        out << "\n}";
+    }
+
+    void JsonPrint(istream &in){
+        string line;
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
     }
 };

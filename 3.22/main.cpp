@@ -27,16 +27,17 @@ int main() {
     ofstream outFile("data.JSON", std::ios::binary);
 
     Clase2 j;
-    cout << "\nJSON generado:" << endl;
+    cout << "JSON generado:" << endl;
     j.JsonStart(outFile);
     // Añadimos cada arreglo como entrada JSON
     j.JsonAdd(outFile, vd);
-    cout << ", ";
     j.JsonAdd(outFile, vs);
-    cout << ", ";
     j.JsonAdd(outFile, vm);
     j.JsonEnd(outFile);
-    cout << endl;
 
+    outFile.close(); // Cierra el archivo antes de leer
+
+    ifstream inFile("data.JSON", std::ios::binary);
+    j.JsonPrint(inFile);
     return 0;
 }

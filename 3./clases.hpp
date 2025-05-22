@@ -39,5 +39,10 @@ public:
 class Clase2{
     public:
     static void Json_Convert(ostream& out, Clase1 data);
-    
+    static void JsonPrint(istream &in){
+        string line;
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
+    }
 };
